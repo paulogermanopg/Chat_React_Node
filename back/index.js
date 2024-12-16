@@ -12,6 +12,13 @@ io.on('connection', socket => {
     socket.on('set_username', username => {
         socket.data.username = username;
     });
+    socket.on('message', text => {
+        io.emit('receive_message', {
+            text,
+            author_id: socket.id,
+            author: socket.data.username,
+        })
+    });
 });
 
 server.listen(PORT, () => console.log('rodou!'))

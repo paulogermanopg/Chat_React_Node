@@ -9,11 +9,11 @@ type JoinProps = {
 export default function Join(props: JoinProps) {
   const userNameRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = async() => {
+  const handleSubmit = async () => {
     const userName = userNameRef?.current?.value;
     if (!userName?.trim()) return;
     const socket = await io("http://localhost:3001");
-    socket.emit('set_username', userName);
+    socket.emit("set_username", userName);
     props.setSocket(socket);
     props.setChatVisibility(true);
   };
