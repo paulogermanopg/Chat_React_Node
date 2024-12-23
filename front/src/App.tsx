@@ -1,20 +1,17 @@
-import { useState } from "react";
-import Join from "./components/Join";
-import Chat from "./components/Chat";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
-  const [chatVisibility, setChatVisibility] = useState<boolean>(false);
-  const [socket, setSocket] = useState<any>(null);
-
   return (
-    <div>
-      {chatVisibility ? (
-        <Chat socket={socket} />
-      ) : (
-        <Join setSocket={setSocket} setChatVisibility={setChatVisibility} />
-      )}
-    </div>
+    <Provider store={store}>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </Provider>
   );
 }
 
 export default App;
+
