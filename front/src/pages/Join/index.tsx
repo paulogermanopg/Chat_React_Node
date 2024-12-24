@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSocket } from "../../redux/slices/chatSlice";
+import * as S from "./styles";
 
 export default function Join() {
   const userNameRef = useRef<HTMLInputElement>(null);
@@ -19,10 +20,19 @@ export default function Join() {
   };
 
   return (
-    <div>
-      <h1>Join</h1>
-      <input type="text" ref={userNameRef} placeholder="nome do usuário" />
-      <button onClick={() => handleSubmit()}>Entrar</button>
-    </div>
+    <S.PageContainer>
+      <S.FormSection>
+        <S.FormContainer>
+          <S.Title>React Chat</S.Title>
+          <S.Input
+            type="text"
+            ref={userNameRef}
+            placeholder="Insira seu nome"
+          />
+          <S.Button onClick={() => handleSubmit()}>Entrar</S.Button>
+        </S.FormContainer>
+      </S.FormSection>
+      <S.BackgroundSection />
+    </S.PageContainer>
   );
 }
