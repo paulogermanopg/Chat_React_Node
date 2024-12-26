@@ -3,9 +3,10 @@ import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSocket } from "../../redux/slices/chatSlice";
+import Carousel from '../../components/Carousel';
 import * as S from "./styles";
 
-export default function Join() {
+export default function Login() {
   const userNameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ export default function Join() {
           <S.Button onClick={() => handleSubmit()}>Entrar</S.Button>
         </S.FormContainer>
       </S.FormSection>
-      <S.BackgroundSection />
+      <S.BackgroundSection>
+        <Carousel />
+      </S.BackgroundSection>
     </S.PageContainer>
   );
 }

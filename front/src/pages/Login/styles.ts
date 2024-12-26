@@ -15,11 +15,22 @@ export const FormSection = styled.div`
   justify-content: center;
   padding: 20px;
   color: #fff;
+
+  @media (max-width: 880px) {
+    flex: 1 1 100%;
+  }
 `;
 
 export const BackgroundSection = styled.div`
-  width: 67%;
-  background-color: #121212;
+  flex: 1;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 880px) {
+    display: none;
+  }
 `;
 
 export const FormContainer = styled.div`

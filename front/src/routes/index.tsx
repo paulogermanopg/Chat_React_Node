@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
 import Chat from "../pages/Chat";
-import Join from "../pages/Join";
+import Login from "../pages/Login";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Join />} />
+      <Route path="/" element={<Login />} />
       <Route path="/chat" element={<Chat />} />
     </Routes>
   );
