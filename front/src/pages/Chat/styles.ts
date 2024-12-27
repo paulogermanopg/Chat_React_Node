@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import COLORS from '../../utils/colorUtils';
 
 type STYLEDPROPS = {
   isUser: boolean;
@@ -13,7 +14,7 @@ export const ChatContainer = styled.div`
   max-height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: #121212;
+  background-color: ${COLORS.BLACK_ECLIPSE};
 `;
 
 export const MessagesContainer = styled.div`
@@ -29,13 +30,13 @@ export const MessagesContainer = styled.div`
 export const MessageBubble = styled(motion.div)<STYLEDPROPS>`
   max-width: 70%;
   padding: 10px 15px;
-  background-color: ${(props) => (props.isUser ? "#8e44ad" : "#2e2e3e")};
-  color: ${(props) => (props.isUser ? "#fff" : "#ddd")};
+  background-color: ${(props) => (props.isUser ? COLORS.PURPURA : COLORS.AZUL_TEMPESTADE)};
+  color: ${(props) => (props.isUser ? COLORS.WHITE : COLORS.GRAY)};
   align-self: ${(props) => (props.isUser ? "flex-end" : "flex-start")};
   border-radius: 15px;
   border-top-right-radius: ${(props) => (props.isUser ? "0" : "15px")};
   border-top-left-radius: ${(props) => (!props.isUser ? "0" : "15px")};
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px ${COLORS.BLACK_OPACITY};
 `;
 
 export const MessageAuthor = styled.span<STYLEDPROPS>`
@@ -43,7 +44,7 @@ export const MessageAuthor = styled.span<STYLEDPROPS>`
   font-size: 0.8rem;
   font-weight: bold;
   margin-bottom: 5px;
-  color:${(props) => props.isUser ? '#d9c9df' : '#9b59b6'};
+  color:${(props) => props.isUser ? COLORS.LAVANDA : COLORS.AMETISTA};
 `;
 
 export const MessageText = styled.span`
@@ -55,12 +56,11 @@ export const Message = styled.div<STYLEDPROPS>`
   padding: 10px;
   border-radius: 20px;
   margin: 5px 0;
-  background-color: ${(props) => (props.isUser ? "#8e44ad" : "#2e2e3e")};
-  color: #fff;
+  background-color: ${(props) => (props.isUser ? COLORS.PURPURA : COLORS.AZUL_TEMPESTADE)};
+  color: ${COLORS.WHITE};
   align-self: ${(props) => (props.isUser ? "flex-end" : "flex-start")};
   word-wrap: break-word;
   text-align: left;
-
   transition: border-radius 0.4s ease, max-width 0.4s ease;
 
   &:hover {
@@ -72,8 +72,8 @@ export const InputContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #1e1e2f;
-  border-top: 1px solid #2e2e3e;
+  background-color: ${COLORS.INDIGO_PROFUNDO};
+  border-top: 1px solid ${COLORS.AZUL_TEMPESTADE};
 `;
 
 export const InputField = styled.input`
@@ -83,12 +83,12 @@ export const InputField = styled.input`
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: #2e2e3e;
-  color: #fff;
+  background-color: ${COLORS.AZUL_TEMPESTADE};
+  color: ${COLORS.WHITE};
   margin-right: 10px;
 
   &::placeholder {
-    color: #aaa;
+    color: ${COLORS.GRAY_FOSCO};
   }
 `;
 
@@ -97,8 +97,8 @@ export const SendButton = styled.button`
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
-  background-color: #8e44ad;
+  color: ${COLORS.WHITE};
+  background-color: ${COLORS.PURPURA};
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -107,8 +107,8 @@ export const SendButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: #9b59b6;
-    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.5);
+    background-color: ${COLORS.AMETISTA};
+    box-shadow: 0 4px 15px ${COLORS.AMETISTA_OPACITY};
   }
 
   &:active {
@@ -120,10 +120,10 @@ export const TypingIndicator = styled.div`
   width: 100%;
   padding: 2px;
   font-size: 0.9rem;
-  color: #fff;
+  color: ${COLORS.WHITE};
   text-align: center;
-  background-color: #2e2e3e;
-  border-top: 1px solid #8e44ad;
+  background-color: ${COLORS.AZUL_TEMPESTADE};
+  border-top: 1px solid ${COLORS.PURPURA};
   position: relative;
   z-index: 1;
 `;

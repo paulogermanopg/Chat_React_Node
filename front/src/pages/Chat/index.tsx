@@ -6,6 +6,7 @@ import { FiSend } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as S from "./styles";
+import COLORS from '../../utils/colorUtils';
 
 type SocketMessage = {
   text: string;
@@ -155,7 +156,7 @@ export default function Chat() {
           onBlur={handleStopTyping}
         />
         <S.SendButton onClick={sendMessage}>
-          <FiSend size={20} color="#fff" />
+          <FiSend size={20} color={COLORS.WHITE} />
         </S.SendButton>
       </S.InputContainer>
       <ToastContainer />

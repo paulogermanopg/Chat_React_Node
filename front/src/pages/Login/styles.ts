@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import COLORS from '../../utils/colorUtils';
 
 export const PageContainer = styled.div`
   display: flex;
@@ -8,13 +9,13 @@ export const PageContainer = styled.div`
 
 export const FormSection = styled.div`
   width: 33%;
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  background: linear-gradient(135deg, ${COLORS.INDIGO_PROFUNDO}, ${COLORS.ANIL_PROFUNDO});
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #fff;
+  color: ${COLORS.WHITE};
 
   @media (max-width: 880px) {
     flex: 1 1 100%;
@@ -23,7 +24,7 @@ export const FormSection = styled.div`
 
 export const BackgroundSection = styled.div`
   flex: 1;
-  background: #000;
+  background: ${COLORS.BLACK};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,8 +44,8 @@ export const FormContainer = styled.div`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  color: #9b59b6;
-  text-shadow: 0 4px 10px rgba(155, 89, 182, 0.5);
+  color: ${COLORS.AMETISTA};
+  text-shadow: 0 4px 10px ${COLORS.AMETISTA_OPACITY};
   margin-bottom: 2rem;
   font-family: 'Goldman'
 `;
@@ -54,16 +55,16 @@ export const Input = styled.input`
   padding: 10px 15px;
   font-size: 1rem;
   color: #fff;
-  background-color: #2e2e3e;
-  border: 2px solid #9b59b6;
+  background-color: ${COLORS.AZUL_TEMPESTADE};
+  border: 2px solid ${COLORS.AMETISTA};
   border-radius: 5px;
   outline: none;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 
   &:focus {
-    border-color: #8e44ad;
-    box-shadow: 0 0 8px #8e44ad;
+    border-color: ${COLORS.PURPURA};
+    box-shadow: 0 0 8px ${COLORS.PURPURA};
   }
 `;
 
@@ -72,16 +73,16 @@ export const Button = styled.button`
   padding: 10px 15px;
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
-  background-color: #8e44ad;
+  color: ${COLORS.WHITE};
+  background-color: ${COLORS.PURPURA};
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #9b59b6;
-    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.5);
+    background-color: ${COLORS.AMETISTA};
+    box-shadow: 0 4px 15px ${COLORS.AMETISTA_OPACITY};
   }
 
   &:active {

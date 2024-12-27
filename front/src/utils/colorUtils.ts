@@ -1,0 +1,15 @@
+export default {
+    WHITE: '#FFF',
+    BLACK: '#000',
+    INDIGO_PROFUNDO: '#1e1e2f',
+    ANIL_PROFUNDO: '#2a2a40',
+    AMETISTA: '#9b59b6',
+    AMETISTA_OPACITY: '#9b59b680',
+    AZUL_TEMPESTADE: '#2e2e3e',
+    PURPURA: '#8e44ad',
+    BLACK_ECLIPSE: '#121212',
+    GRAY: '#DDD',
+    BLACK_OPACITY: 'rgba(0, 0, 0, 0.1)',
+    LAVANDA: '#d9c9df',
+    GRAY_FOSCO: '#aaa',
+};
